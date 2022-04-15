@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Scan') {
       steps {
-        sh 'trivy petrugiurca/axsys-golang-v1.18:latest'
+        sh 'trivy image petrugiurca/axsys-golang-v1.18:latest'
       }
     }
   }
