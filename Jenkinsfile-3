@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t petrugiurca/axsys-golang-v1.18:latest .'
+        sh 'docker build --no-cache -t petrugiurca/axsys-golang-v1.18:latest .'
       }
     }
     stage('Scan') {
