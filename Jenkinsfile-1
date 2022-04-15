@@ -6,14 +6,9 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
-        sh 'docker pull petrugiurca/axsys-golang-v1.17:latest'
+        sh 'docker pull petrugiurca/axsys-golang-v1.18:latest'
       }
     }
-    #stage('Build') {
-      #steps {
-        #sh 'docker build --no-cache -t petrugiurca/axsys-golang-v1.18:latest .'
-      #}
-    #}
     stage('Scan') {
       steps {
         sh 'trivy petrugiurca/axsys-golang-v1.18:latest'
