@@ -4,6 +4,11 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   stages {
+    stage('Sign in') {
+      steps {
+        sh 'docker login'
+      }
+    }
     stage('Pull') {
       steps {
         sh 'docker pull petrugiurca/axsys-golang-v1.18:latest'
