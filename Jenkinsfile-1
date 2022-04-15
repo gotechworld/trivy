@@ -14,5 +14,10 @@ pipeline {
         sh 'trivy image petrugiurca/axsys-golang-v1.18:latest'
       }
     }
+    stage('Clean') {
+      steps {
+        sh 'docker images -q | xargs docker rmi -f'
+      }
+    }
   }
 }
