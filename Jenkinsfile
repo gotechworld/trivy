@@ -20,7 +20,7 @@ pipeline {
         stage ('Analyze with Trivy') {
             steps {
                 echo "Analyze it with Trivy"
-                sh "trivy image --format template --template ${TEMPLATE_PATH} \
+                sh "trivy image --ignore-unfixed --format template --template ${TEMPLATE_PATH} \
                 --output cve_report.html ${DOCKER_IMAGE}:${VERSION}"
             }
         }
